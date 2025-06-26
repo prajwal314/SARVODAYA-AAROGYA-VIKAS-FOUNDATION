@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+<body>
+
+    <header class="header">
+        
+        <nav class="main-nav">
+            <div class="container">
+                <a href="/" class="logo">
+                    <img src="logo.png" alt="Healthcare Logo">
+                </a>
+
+                <h3 class="name">SARVODAYA AAROGYA VIKAS FOUNDATION</h3>
+
+                
+
+                
+                    <div class="nav-container">
+                        <a href="index.html" class="nav-item">Home</a>
+                        <a href="apply.html" class="nav-item active">Apply Now</a>
+
+                        <div class="dropdown">
+                            <a href="#" class="nav-item">Locations</a>
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Akola</a>
+                                <a href="#" class="dropdown-item">Amaravti</a>
+                                <a href="#" class="dropdown-item">kolhapur</a>
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown">
+                            <a href="photos.html" class="nav-item">Gallery</a>
+                            <div class="dropdown-content">
+                                <a href="photos.html" class="dropdown-item">Photos</a>
+                                <a href="#" class="dropdown-item">Videos</a>
+                                <a href="#" class="dropdown-item">Events</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <a href="aboutus.html" class="nav-item">About us</a>
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Our Mission</a>
+                                <a href="aboutus.html" class="dropdown-item">Our Team</a>
+                                <a href="#" class="dropdown-item">Testimonials</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <a href="contactus.html" class="nav-item">Contact us</a>
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">Location</a>
+                                <a href="#" class="dropdown-item">Support</a>
+                                <a href="#" class="dropdown-item">Feedback</a>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="divider"><br>
+        <div class="container">
+          <div class="row">
+          
+            <div class="col-md-10 col-md-push-1">
+                    <div class="alert alert-success">
+            <strong>धन्यवाद ! </strong>   आमचे कार्ड वितरक लवकरच आपल्याशी संपर्क साधेल
+          </div>	
+          <script>// window.location.href='request.php'; </script>
+                                                                  
+  
+              <div class="border-1px p-30 mb-0">
+                <h3 class="text-theme-colored mt-0 pt-5">नवीन कार्ड बनविण्यासाठी फॉर्म भरा</h3>
+                <hr>
+                <p> </p>
+                <form name="job_apply_form" action="" method="post" enctype="multipart/form-data">
+                  
+                  <div class="form-group">
+                        <label> नाव <small>*</small></label>
+                        <input name="name" type="text" placeholder="नाव लिहा" required="" class="form-control" fdprocessedid="by5jbg">
+                      </div>
+                      <div class="form-group">
+                        <label> शहर <small>*</small></label>
+                        <input name="city" type="text" placeholder="शहर नाव  लिहा" required="" class="form-control" fdprocessedid="hwgj7">
+                      </div>
+                    
+                      <div class="form-group">
+                        <label>मोबाईल क्रमांक <small>*</small></label>
+                        <input name="mobile" class="form-control required number" type="number" placeholder="मोबाईल क्रमांक लिहा" required="" fdprocessedid="1mevz8">
+                      </div>
+                     
+                  <div class="form-group">
+                    <label>वॉर्ड क्रमांक  <small>*</small></label>
+                   <input name="ward_no" class="form-control required number" type="number" placeholder="वॉर्ड क्रमांक लिहा " fdprocessedid="g37alf">
+                  </div>
+                
+                  <div class="form-group">
+                    <label>पत्ता <small>*</small></label>
+                    <textarea name="address" class="form-control required" rows="5" placeholder="पूर्ण पत्ता लिहा " required=""></textarea>
+                  </div>
+                      
+                  <div class="form-group">
+                    <input name="form_botcheck" class="form-control" type="hidden" value="">
+                    <button type="submit" name="submit" class="btn btn-block btn-dark btn-theme-colored btn-sm mt-20 pt-10 pb-10" data-loading-text="Please wait..." fdprocessedid="s36qut">नोंदणी करा</button>
+                  </div>
+                </form>
+                  
+                    <section class="inner-header" data-bg-img="sarvodayaaarogyavikasfoundation/card_bg.jpeg" style="height: 249px; background-image: url(&quot;sarvodayaaarogyavikasfoundation/card_bg.jpeg&quot;);">
+        <div class="container pt-60 pb-60">
+          <!-- Section Content -->
+          <div class="section-content">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h2 class="title text-white">  </h2>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+                <!-- Job Form Validation-->
+                <script type="text/javascript">
+                  $("#job_apply_form").validate({
+                    submitHandler: function(form) {
+                      var form_btn = $(form).find('button[type="submit"]');
+                      var form_result_div = '#form-result';
+                      $(form_result_div).remove();
+                      form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                      var form_btn_old_msg = form_btn.html();
+                      form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                      $(form).ajaxSubmit({
+                        dataType:  'json',
+                        success: function(data) {
+                          if( data.status == 'true' ) {
+                            $(form).find('.form-control').val('');
+                          }
+                          form_btn.prop('disabled', false).html(form_btn_old_msg);
+                          $(form_result_div).html(data.message).fadeIn('slow');
+                          setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                        }
+                      });
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Healthcare Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
