@@ -26,26 +26,28 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth <= 768) {
         dropdowns.forEach(dropdown => {
             const navItem = dropdown.querySelector('.nav-item');
+            const dropdownContent = dropdown.querySelector('.dropdown-content');
             navItem.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdownContent = this.nextElementSibling;
-                
-                // Close all other dropdowns
-                dropdowns.forEach(otherDropdown => {
-                    if (otherDropdown !== dropdown) {
-                        const otherContent = otherDropdown.querySelector('.dropdown-content');
-                        if (otherContent.style.display === 'block') {
-                            otherContent.style.display = 'none';
+                // Only prevent default if dropdown-content exists (i.e., is a parent dropdown)
+                if (dropdownContent) {
+                    e.preventDefault();
+                    // Close all other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            const otherContent = otherDropdown.querySelector('.dropdown-content');
+                            if (otherContent && otherContent.style.display === 'block') {
+                                otherContent.style.display = 'none';
+                            }
                         }
+                    });
+                    // Toggle this dropdown
+                    if (dropdownContent.style.display === 'block') {
+                        dropdownContent.style.display = 'none';
+                    } else {
+                        dropdownContent.style.display = 'block';
                     }
-                });
-                
-                // Toggle this dropdown
-                if (dropdownContent.style.display === 'block') {
-                    dropdownContent.style.display = 'none';
-                } else {
-                    dropdownContent.style.display = 'block';
                 }
+                // If no dropdown-content, allow default navigation
             });
         });
     }
