@@ -888,7 +888,6 @@ textarea.form-control {
     position: relative;
 }
 .services-column li::before {
-    content: '•';
     color: #0a5a80;
     font-size: 1.2em;
     margin-right: 8px;
